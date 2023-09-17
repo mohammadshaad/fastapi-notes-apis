@@ -28,11 +28,11 @@ log/
 logs/
 dist-info/
 
-# Local development settings (uncomment if using)
-# .env
+# Local development settings 
+.env
 
-# Visual Studio Code settings (uncomment if using)
-# .vscode/
+# Visual Studio Code settings
+.vscode/
 
 # Jupyter Notebook settings (uncomment if using)
 # .ipynb_checkpoints/
