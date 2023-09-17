@@ -1,0 +1,40 @@
+# Byte-compiled / optimized Python files
+__pycache__/
+*.pyc
+
+# Caches and logs
+*.log
+logs/
+*.swp
+
+# Virtual environment
+venv/
+env/
+.venv/
+ENV/
+
+# Dependency directories
+lib/
+libs/
+lib64/
+parts/
+sdist/
+dist/
+build/
+eggs/
+.eggs/
+var/
+log/
+logs/
+dist-info/
+
+# Local development settings (uncomment if using)
+# .env
+
+# Visual Studio Code settings (uncomment if using)
+# .vscode/
+
+# Jupyter Notebook settings (uncomment if using)
+# .ipynb_checkpoints/
+
+.DS_Store
