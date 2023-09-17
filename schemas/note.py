@@ -3,7 +3,6 @@ def noteEntity(item) -> dict:
         "id": str(item["_id"]),
         "title": item["title"],
         "description": item["description"],
-        "important": item["important"],
     }
 
 def notesEntity(items) -> list:

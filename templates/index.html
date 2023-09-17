@@ -51,37 +51,51 @@
     </nav>
 
     <div class="container m-4">
-      <form method="post">
+      <form action="/note" method="post">
         <div class="mb-3">
           <label for="title" class="form-label">Note Title</label>
           <input
             type="text"
             class="form-control"
             id="title"
-            aria-describedby="title"
+            name="title"
           />
         </div>
         <div class="mb-3">
           <label for="description" class="form-label">Note Description</label>
-          <input type="text" class="form-control" id="description" />
+          <input type="text" class="form-control" id="description" name="description" />
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
 
     <div class="container m-4">
+      <!-- Your Notes -->
+      <h2 class="card-header">Your Notes</h2>
+
+      {% if newDocs|length == 0 %}
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Hey!</strong> You have not created any notes yet.
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      {% endif %}
+
+
       {% for item in newDocs %}
       <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
       />
       <div class="card my-2">
-        <!-- Your Notes -->
-        <h2 class="card-header">Your Notes</h2>
-
         <div class="card-body d-flex justify-content-between">
-          <h5 class="card-title">{{ item.note }}</h5>
-          <!-- <p class="card-text">{{ item.description }}</p> -->
+          <h5 class="card-title">{{ item.title }}</h5>
+          <p class="card-text">{{ item.description }}</p>
           <a href="#" class="btn btn-primary">Open Note</a>
           <div>
             <a href="/edit" class="btn btn-primary">Edit</a>

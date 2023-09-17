@@ -18,7 +18,17 @@ async def index(request: Request):
     for doc in docs:
         newDocs.append({
             "id": doc["_id"],
-            "note": doc["note"],
+            "title": doc["title"],
+            "description": doc["description"],
         })
     print(newDocs)
     return templates.TemplateResponse("index.html", {"request": request, "newDocs": newDocs})
+
+@note.post('/note')
+async def create_notes(request: Request):
+    form = await request.form()
+
+    formDict = dict(form)
+
+    created_note = client.notes.notes.insert_one(formDict)
+    return {"message": "Note created successfully"}
